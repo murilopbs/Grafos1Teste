@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Graph</title>
+  </head>
+  <body>
+    <h1>Graph</h1>
+    <img style="text-align: center;"
+       src="{{ url_for('pagina') }}"
+       height="500"
+    />
+    <p>
+      {%for i in caminhos%}
+        {%for j in i%}
+          {% if j == i|last %}
+            {{ j }}
+          {%else%}
+            {{ j + "->" }}
+          {%endif%}
+        {%endfor%}
+        <br>
+      {%endfor%}
+    </p>
+  </body>
+</html>
